@@ -1,0 +1,1 @@
+# osel-customer-manager
