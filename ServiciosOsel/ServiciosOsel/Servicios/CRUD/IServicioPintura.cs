@@ -22,12 +22,12 @@ namespace ServiciosOsel.Servicios.CRUD
         List<Pintura> LeerTodos();
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "get/{codigo}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "GET", UriTemplate = "getByCode/{codigo}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         Pintura LeerPorCodigo(string codigo);
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "get/{id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        Pintura LeerPorId(int id);
+        Pintura LeerPorId(string id);
 
         [OperationContract]
         [WebInvoke(Method = "PUT", UriTemplate = "edit", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]

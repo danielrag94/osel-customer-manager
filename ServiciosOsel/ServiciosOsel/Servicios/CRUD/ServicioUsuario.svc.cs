@@ -39,10 +39,11 @@ namespace ServiciosOsel.Servicios.CRUD
             return true;
         }
 
-        public Usuario LeerPorId(int id)
+        public Usuario LeerPorId(string id)
         {
             Usuario user = new Usuario();
-            var Query = from usuario in BaseDatos.Usuario where usuario.Id == id select usuario;
+            int ID = int.Parse(id);
+            var Query = from usuario in BaseDatos.Usuario where usuario.Id == ID select usuario;
             foreach (var result in Query)
             {
                 user = result;

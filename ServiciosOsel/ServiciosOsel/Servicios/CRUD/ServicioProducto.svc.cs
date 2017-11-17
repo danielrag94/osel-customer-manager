@@ -42,10 +42,11 @@ namespace ServiciosOsel.Servicios.CRUD
             return true;            
         }
 
-        public Producto LeerPorId(int id)
+        public Producto LeerPorId(string id)
         {
             Producto product = new Producto();
-            var Query = from producto in BaseDatos.Producto where producto.Id == id select producto;
+            int ID = int.Parse(id);
+            var Query = from producto in BaseDatos.Producto where producto.Id == ID select producto;
             foreach (var result in Query)
             {
                 product = result;

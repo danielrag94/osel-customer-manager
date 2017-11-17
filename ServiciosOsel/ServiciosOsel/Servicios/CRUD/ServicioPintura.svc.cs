@@ -49,10 +49,11 @@ namespace ServiciosOsel.Servicios.CRUD
             return paint;
         }
 
-        public Pintura LeerPorId(int id)
+        public Pintura LeerPorId(string id)
         {            
             Pintura paint = new Pintura();
-            var Query = from pintura in BaseDatos.Pintura where pintura.Id == id select pintura;
+            int ID = int.Parse(id);
+            var Query = from pintura in BaseDatos.Pintura where pintura.Id == ID select pintura;
             foreach (var result in Query)
             {
                 paint = result;

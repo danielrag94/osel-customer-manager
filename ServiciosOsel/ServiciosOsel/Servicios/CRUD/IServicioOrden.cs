@@ -23,11 +23,11 @@ namespace ServiciosOsel.Servicios.CRUD
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "get/{id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        Orden LeerPorId(int id);
+        Orden LeerPorId(string id);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "get/{fecha}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        Orden LeerPorFecha(DateTime fecha);
+        [WebInvoke(Method = "GET", UriTemplate = "getFecha/{fecha}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        Orden LeerPorFecha(string fecha);
 
         [OperationContract]
         [WebInvoke(Method = "PUT", UriTemplate = "edit", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]

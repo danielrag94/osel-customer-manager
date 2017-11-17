@@ -40,10 +40,11 @@ namespace ServiciosOsel.Servicios.CRUD
             return true;
         }
 
-        public Orden LeerPorFecha(DateTime fecha)
+        public Orden LeerPorFecha(string fecha)
         {
+            DateTime Fecha = DateTime.Parse(fecha);
             Orden order = new Orden();
-            var Query = from orden in BaseDatos.Orden where orden.Fecha == fecha select orden;
+            var Query = from orden in BaseDatos.Orden where orden.Fecha == Fecha select orden;
             foreach (var result in Query)
             {
                 order = result;
@@ -51,10 +52,11 @@ namespace ServiciosOsel.Servicios.CRUD
             return order;
         }
 
-        public Orden LeerPorId(int id)
+        public Orden LeerPorId(string id)
         {
             Orden order = new Orden();
-            var Query = from orden in BaseDatos.Orden where orden.Id == id select orden;
+            int ID = int.Parse(id);
+            var Query = from orden in BaseDatos.Orden where orden.Id == ID select orden;
             foreach (var result in Query)
             {
                 order = result;

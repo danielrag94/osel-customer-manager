@@ -23,10 +23,10 @@ namespace ServiciosOsel.Servicios.CRUD
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "get/{id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        Usuario LeerPorId(int id);
+        Usuario LeerPorId(string id);
 
         [OperationContract]
-        [WebInvoke(Method = "GET", UriTemplate = "getAll", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
+        [WebInvoke(Method = "GET", UriTemplate = "getNombre/{nombre}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
         List<Usuario> LeerPorNombre(string nombre);
 
         [OperationContract]

@@ -23,7 +23,7 @@ namespace ServiciosOsel.Servicios.CRUD
 
         [OperationContract]
         [WebInvoke(Method = "GET", UriTemplate = "get/{id}", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
-        Producto LeerPorId(int id);
+        Producto LeerPorId(string id);
 
         [OperationContract]
         [WebInvoke(Method = "PUT", UriTemplate = "edit", RequestFormat = WebMessageFormat.Json, ResponseFormat = WebMessageFormat.Json)]
