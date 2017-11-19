@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <a href="@Url.Action("Crear", "Pintura")">Agregar nuevo color</a>
+    <br />
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Codigo</th>
+            <th>Opción</th>
+        </tr>
+        @foreach (var pintura in ViewBag.listaPinturas)
+        {
+            <tr>
+                <td>@pintura.Id</td>
+                <td>@pintura.Nombre</td>
+                <td>@pintura.Codigo</td>
+                <td>
+                    <a href="@Url.Action("Eliminar", "Pintura", new { id = pintura.Id })">Eliminar</a>
+                    <a href="@Url.Action("Editar", "Pintura", new { id = pintura.Id })">Editar</a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

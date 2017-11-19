@@ -1,0 +1,41 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model ClienteWebOsel.ViewModels.ViewModelsPintura
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Editar</title>
+</head>
+<body>
+    @using (Html.BeginForm("Editar", "Pintura"))
+    {
+        <table cellpadding="2" cellspacing="2">
+            <tr>
+                <td>@Html.LabelFor(model => model.Pintura.Id)</td>
+                <td>
+                    @Html.ValueFor(model => model.Pintura.Id)
+                    @Html.HiddenFor(model1 => model1.Pintura.Id)
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Pintura.Nombre)</td>
+                <td>@Html.TextBoxFor(model1 => model1.Pintura.Nombre)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Pintura.Codigo)</td>
+                <td>@Html.TextBoxFor(model1 => model1.Pintura.Codigo)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Save" /></td>
+            </tr>
+        </table>
+    }
+</body>
+</html>

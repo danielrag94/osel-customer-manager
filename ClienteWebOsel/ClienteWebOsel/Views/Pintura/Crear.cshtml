@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+@model ClienteWebOsel.ViewModels.ViewModelsPintura
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Crear</title>
+</head>
+<body>
+    @using (Html.BeginForm("Crear", "Pintura"))
+    {
+        <table cellpadding="2" cellspacing="2">
+            <tr>
+                <td>@Html.LabelFor(model => model.Pintura.Nombre)</td>
+                <td>@Html.TextBoxFor(model1 => model1.Pintura.Nombre)</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(model => model.Pintura.Codigo)</td>
+                <td>@Html.TextBoxFor(model1 => model1.Pintura.Codigo)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="submit" value="Save" /></td>
+            </tr>
+        </table>
+    }
+</body>
+</html>
