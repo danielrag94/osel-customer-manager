@@ -1,0 +1,11 @@
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\bin\ServiciosOsel.dll.config
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\bin\ServiciosOsel.dll
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\bin\ServiciosOsel.pdb
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\bin\EntityFramework.dll
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\bin\EntityFramework.SqlServer.dll
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\bin\EntityFramework.xml
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\bin\EntityFramework.SqlServer.xml
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\obj\Debug\ServiciosOsel.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\obj\Debug\ServiciosOsel.csproj.CoreCompileInputs.cache
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\obj\Debug\ServiciosOsel.dll
+C:\Users\Daniel\source\repos\ServiciosOsel\ServiciosOsel\obj\Debug\ServiciosOsel.pdb
