@@ -28,5 +28,12 @@ namespace ClienteWebOsel.Models
             get;
             set;
         }
+
+        [Display(Name = "Color")]
+        public string Color
+        {
+            get;
+            set;
+        }
     }
 }
