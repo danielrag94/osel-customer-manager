@@ -26,6 +26,7 @@ namespace ServiciosOsel.Servicios.CRUD
             var paint = BaseDatos.Pintura.FirstOrDefault(x => x.Id == pintura.Id);
             paint.Codigo = pintura.Codigo;
             paint.Nombre = pintura.Nombre;
+            paint.Color = pintura.Color;
             BaseDatos.SaveChanges();
             return true;
         }

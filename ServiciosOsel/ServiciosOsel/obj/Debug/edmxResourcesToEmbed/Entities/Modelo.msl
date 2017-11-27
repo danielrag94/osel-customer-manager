@@ -24,6 +24,7 @@
     <EntitySetMapping Name="Pintura">
       <EntityTypeMapping TypeName="OselDBModel.Pintura">
         <MappingFragment StoreEntitySet="Pintura">
+          <ScalarProperty Name="Color" ColumnName="Color" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Codigo" ColumnName="Codigo" />
