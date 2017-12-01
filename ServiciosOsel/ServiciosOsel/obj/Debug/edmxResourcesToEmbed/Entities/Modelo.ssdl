@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="OselDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="OselDBEntities.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Orden">
     <Key>
       <PropertyRef Name="Id" />
@@ -25,7 +25,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
     <Property Name="Codigo" Type="nvarchar" MaxLength="50" />
-    <Property Name="Color" Type="nvarchar" MaxLength="50" />
+    <Property Name="Color" Type="int" />
   </EntityType>
   <EntityType Name="Producto">
     <Key>
@@ -50,7 +50,7 @@
     <Property Name="Contrasena" Type="nvarchar" MaxLength="50" />
     <Property Name="Nivel" Type="nvarchar" MaxLength="50" />
   </EntityType>
-  <EntityContainer Name="OselDBModelStoreContainer">
+  <EntityContainer Name="OselDBEntitiesStoreContainer">
     <EntitySet Name="Orden" EntityType="Self.Orden" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orden_Producto" EntityType="Self.Orden_Producto" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Pintura" EntityType="Self.Pintura" Schema="dbo" store:Type="Tables" />

@@ -71,8 +71,8 @@
   <ItemGroup>
     <Content Include="Entities\Modelo.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>Modelo.Context.cs</LastGenOutput>
       <DependentUpon>Modelo.edmx</DependentUpon>
+      <LastGenOutput>Modelo.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Entities\Modelo.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -83,6 +83,7 @@
     <Content Include="Servicios\CRUD\ServicioPintura.svc" />
     <Content Include="Servicios\CRUD\ServicioProducto.svc" />
     <Content Include="Servicios\CRUD\ServicioUsuario.svc" />
+    <Content Include="Servicios\Sesion\ServicioSesion.svc" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -134,6 +135,10 @@
     </Compile>
     <Compile Include="Servicios\CRUD\ServicioUsuario.svc.cs">
       <DependentUpon>ServicioUsuario.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Servicios\Sesion\IServicioSesion.cs" />
+    <Compile Include="Servicios\Sesion\ServicioSesion.svc.cs">
+      <DependentUpon>ServicioSesion.svc</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

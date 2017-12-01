@@ -12,13 +12,13 @@ namespace ServiciosOsel.Servicios.CRUD
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ServicioPintura.svc o ServicioPintura.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ServicioPintura : IServicioPintura
     {
-        OselDBEntities BaseDatos = new OselDBEntities();
+        osel_dbEntities BaseDatos = new osel_dbEntities();
 
         public bool Crear(Pintura pintura)
         {
             BaseDatos.Pintura.Add(pintura);
             BaseDatos.SaveChanges();
-            return true;            
+            return true;
         }
 
         public bool Editar(Pintura pintura)
@@ -51,7 +51,7 @@ namespace ServiciosOsel.Servicios.CRUD
         }
 
         public Pintura LeerPorId(string id)
-        {            
+        {
             Pintura paint = new Pintura();
             int ID = int.Parse(id);
             var Query = from pintura in BaseDatos.Pintura where pintura.Id == ID select pintura;
@@ -59,7 +59,7 @@ namespace ServiciosOsel.Servicios.CRUD
             {
                 paint = result;
             }
-            return paint;            
+            return paint;
         }
 
         public List<Pintura> LeerTodos()
@@ -72,6 +72,6 @@ namespace ServiciosOsel.Servicios.CRUD
             }
             Console.WriteLine("Resultado " + lista.First());
             return lista;
-        }
+        }        
     }
 }

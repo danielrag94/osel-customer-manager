@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="OselDBModelStoreContainer" CdmEntityContainer="OselDBEntities">
+  <EntityContainerMapping StorageEntityContainer="OselDBEntitiesStoreContainer" CdmEntityContainer="osel_dbEntities">
     <EntitySetMapping Name="Orden">
-      <EntityTypeMapping TypeName="OselDBModel.Orden">
+      <EntityTypeMapping TypeName="OselDBEntities.Orden">
         <MappingFragment StoreEntitySet="Orden">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Detalle" ColumnName="Detalle" />
@@ -13,7 +13,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Orden_Producto">
-      <EntityTypeMapping TypeName="OselDBModel.Orden_Producto">
+      <EntityTypeMapping TypeName="OselDBEntities.Orden_Producto">
         <MappingFragment StoreEntitySet="Orden_Producto">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Id_Orden" ColumnName="Id_Orden" />
@@ -22,17 +22,17 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Pintura">
-      <EntityTypeMapping TypeName="OselDBModel.Pintura">
+      <EntityTypeMapping TypeName="OselDBEntities.Pintura">
         <MappingFragment StoreEntitySet="Pintura">
-          <ScalarProperty Name="Color" ColumnName="Color" />
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />
           <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Color" ColumnName="Color" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Producto">
-      <EntityTypeMapping TypeName="OselDBModel.Producto">
+      <EntityTypeMapping TypeName="OselDBEntities.Producto">
         <MappingFragment StoreEntitySet="Producto">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Codigo_Pintura" ColumnName="Codigo_Pintura" />
@@ -45,7 +45,7 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="Usuario">
-      <EntityTypeMapping TypeName="OselDBModel.Usuario">
+      <EntityTypeMapping TypeName="OselDBEntities.Usuario">
         <MappingFragment StoreEntitySet="Usuario">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Nombre" ColumnName="Nombre" />

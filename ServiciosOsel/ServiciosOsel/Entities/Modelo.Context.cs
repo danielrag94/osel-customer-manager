@@ -13,10 +13,10 @@ namespace ServiciosOsel.Entities
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class OselDBEntities : DbContext
+    public partial class osel_dbEntities : DbContext
     {
-        public OselDBEntities()
-            : base("name=OselDBEntities")
+        public osel_dbEntities()
+            : base("name=osel_dbEntities")
         {
         }
     

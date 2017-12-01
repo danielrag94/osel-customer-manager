@@ -12,7 +12,7 @@ namespace ServiciosOsel.Servicios.CRUD
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ServicioOrden.svc o ServicioOrden.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ServicioOrden : IServicioOrden
     {
-        OselDBEntities BaseDatos = new OselDBEntities();
+        osel_dbEntities BaseDatos = new osel_dbEntities();
 
         public bool Crear(Orden orden)
         {
