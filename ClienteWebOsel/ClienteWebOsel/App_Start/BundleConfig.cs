@@ -24,8 +24,14 @@ namespace ClienteWebOsel
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/bootstrap.css",
+                      "~/Content/css/main.css",
+                      "~/Content/css/fonts.css",
+                      "~/Content/css/bootstrap-responsive.min.css",
+                      "~/Content/css/compass.css",
+                      "~/Content/css/responsive.css",
+                      "~/Content/css/supersized.css",
+                      "~/Content/css/supersized.shutter.css"));            
         }
     }
 }
