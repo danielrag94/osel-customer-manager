@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="OselDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="OselDBEntities" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Orden">
     <Key>
       <PropertyRef Name="Id" />
@@ -25,7 +25,7 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="Color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Color" Type="Int32" />
   </EntityType>
   <EntityType Name="Producto">
     <Key>
@@ -50,7 +50,7 @@
     <Property Name="Contrasena" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="Nivel" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
-  <EntityContainer Name="OselDBEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="osel_dbEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Orden" EntityType="Self.Orden" />
     <EntitySet Name="Orden_Producto" EntityType="Self.Orden_Producto" />
     <EntitySet Name="Pintura" EntityType="Self.Pintura" />

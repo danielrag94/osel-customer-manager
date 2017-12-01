@@ -12,7 +12,7 @@ namespace ServiciosOsel.Servicios.CRUD
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ServicioProducto.svc o ServicioProducto.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ServicioProducto : IServicioProducto
     {
-        OselDBEntities BaseDatos = new OselDBEntities();
+        osel_dbEntities BaseDatos = new osel_dbEntities();
 
         public bool Crear(Producto producto)
         {
