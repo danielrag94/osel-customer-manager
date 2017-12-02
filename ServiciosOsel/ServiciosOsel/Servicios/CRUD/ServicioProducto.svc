@@ -1,1 +1,0 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="ServiciosOsel.Servicios.CRUD.ServicioProducto" CodeBehind="ServicioProducto.svc.cs" %>
