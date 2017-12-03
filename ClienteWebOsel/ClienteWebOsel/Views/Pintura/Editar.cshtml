@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "Editar Pinturas";
 }
 
@@ -9,124 +8,65 @@
 
 <html>
 <head>
-    <!-- Meta Tags -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <title> Pinturas Osel </title>
-
-    <meta name="description" content="Insert Your Site Description" />
-
-    <!-- Mobile Specifics -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="MobileOptimized" content="320" />
-
-    <!-- Mobile Internet Explorer ClearType Technology -->
-    <!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
-    <!-- Bootstrap -->
-    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Main Style -->
-    <link href="~/Content/css/main.css" rel="stylesheet">
-
-    <!-- Supersized -->
-    <link href="~/Content/css/supersized.css" rel="stylesheet">
-    <link href="~/Content/css/supersized.shutter.css" rel="stylesheet">
-
-    <!-- FancyBox -->
-    <link href="~/Content/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-
-    <!-- Font Icons -->
-    <link href="~/Content/css/fonts.css" rel="stylesheet">
-
-    <!-- Shortcodes -->
-    <link href="~/Content/css/shortcodes.css" rel="stylesheet">
-
-    <!-- Responsive -->
-    <link href="~/Content/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="~/Content/css/responsive.css" rel="stylesheet">
-
-    <!-- Supersized -->
-    <link href="~/Content/css/supersized.css" rel="stylesheet">
-    <link href="~/Content/css/supersized.shutter.css" rel="stylesheet">
-
-    <!-- Google Font -->
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
-
-    <!-- Modernizr -->
-    <script src="~/Scripts/modernizr.js"></script>
-        
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pinturas Osel</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="~/Scripts/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="~/Scripts/materialize.min.js"></script>
+    <script src="~/Scripts/main.js"></script>          
 </head>
 <body>
     <header>
-        <div class="sticky-nav">
-            <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
-
-            <div id="logo">
-                <a id="goUp" href="#home-slider" title=""></a>
-            </div>
-
-            <nav id="menu">
-                <ul id="menu-nav">
-                    <li class="current"><a href="#home-slider"></a></li>
-                    <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>                    
-                    <li><a href="@Url.Action("Index", "Pintura")" class="external">Creación de pinturas</a></li>
-                    <li><a href="@Url.Action("Index", "Usuario")" class="external">Registro</a></li>
-                    <li><a href="carrito.html" class="external">Ventas</a></li>
+        <nav class="NavBar full">
+            <div class="row">
+                <div class="tittles NavBar-logo col s12 m3">Pinturas Osel</div>
+                <ul class="NavBar-links col m9">
+                    <li><a href="@Url.Action("Index", "Home")" class="waves-effect">Inicio</a></li>
+                    <li><a href="@Url.Action("Index", "Pintura")" class="waves-effect">Pinturas</a></li>
                 </ul>
-            </nav>
-
+                <i class="zmdi zmdi-more-vert full btn-menu hide-on-med-and-up waves-effect"></i>
+            </div>
+        </nav>
+        <div class="row">
+            <h4 class="center-align tittles">Editar Pintura</h4>
         </div>
     </header>
-    @using (Html.BeginForm("Editar", "Pintura"))
-    {
-        <table class="table table-bordered" cellpadding="2" cellspacing="2">
-            <tr>
-                <td>@Html.LabelFor(model => model.Pintura.Id)</td>
-                <td>
-                    @Html.ValueFor(model => model.Pintura.Id)
-                    @Html.HiddenFor(model1 => model1.Pintura.Id)
-                </td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(model => model.Pintura.Nombre)</td>
-                <td>@Html.TextBoxFor(model1 => model1.Pintura.Nombre)</td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(model => model.Pintura.Codigo)</td>
-                <td>@Html.TextBoxFor(model1 => model1.Pintura.Codigo)</td>
-            </tr>
-            <tr>
-                <td>@Html.LabelFor(model => model.Pintura.Color)</td>
-                <td><input type="color" name="color" value="@ViewBag.color"></td>
-            </tr>
-            <tr>
-                <td>&nbsp;</td>
-                <td><input type="submit" value="Save" /></td>
-            </tr>
-        </table>
-    }
-
-    <!-- Footer -->
-    <footer>
-        <p class="credits">&copy;2017 Pinturas Osel</p>
-    </footer>
-    <!-- End Footer -->
-    <!-- Back To Top -->
-    <a id="back-to-top" href="#">
-        <i class="font-icon-arrow-simple-up"></i>
-    </a>
-    <!-- End Back to Top -->
-    <!-- Js -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
-    <script src="~/Scripts/bootstrap.min.js"></script> <!-- Bootstrap -->
-    <script src="~/Scripts/supersized.3.2.7.min.js"></script> <!-- Slider -->
-    <script src="~/Scripts/waypoints.js"></script> <!-- WayPoints -->
-    <script src="~/Scripts/waypoints-sticky.js"></script> <!-- Waypoints for Header -->
-    <script src="~/Scripts/jquery.isotope.js"></script> <!-- Isotope Filter -->
-    <script src="~/Scripts/jquery.fancybox.pack.js"></script> <!-- Fancybox -->
-    <script src="~/Scripts/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
-    <script src="~/Scripts/main.js"></script> <!-- Default JS -->
-    <!-- End Js -->
+    <section>
+        <div class="container">
+            @using (Html.BeginForm("Editar", "Pintura"))
+            {
+                <table cellpadding="2" cellspacing="2">
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Pintura.Id)</td>
+                        <td>
+                            @Html.ValueFor(model => model.Pintura.Id)
+                            @Html.HiddenFor(model1 => model1.Pintura.Id)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Pintura.Nombre)</td>
+                        <td>@Html.TextBoxFor(model1 => model1.Pintura.Nombre)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Pintura.Codigo)</td>
+                        <td>@Html.TextBoxFor(model1 => model1.Pintura.Codigo)</td>
+                    </tr>
+                    <tr>
+                        <td>@Html.LabelFor(model => model.Pintura.Color)</td>
+                        <td><input type="color" name="color" value="@ViewBag.color"></td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td><input type="submit" value="Guardar cambios" /></td>
+                    </tr>
+                </table>
+            }
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="col s12 tittles footer-copyright">Osel Pinturas &copy; 2017</div>
+    </footer>   
 </body>
 </html>
