@@ -1,335 +1,70 @@
-﻿
-@{
-    ViewBag.Title = "Home Page";
+﻿@{
+    ViewBag.Title = "Home Page";    
 }
 
 <!DOCTYPE html>
 
 <html>
 <head>
-    <!-- Meta Tags -->
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
-    <title> Pinturas Osel </title>
-
-    <meta name="description" content="Insert Your Site Description" />
-
-    <!-- Mobile Specifics -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="MobileOptimized" content="320" />
-
-    <!-- Mobile Internet Explorer ClearType Technology -->
-    <!--[if IEMobile]>  <meta http-equiv="cleartype" content="on">  <![endif]-->
-    <!-- Bootstrap -->
-    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Main Style -->
-    <link href="~/Content/css/main.css" rel="stylesheet">    
-
-    <!-- Supersized -->
-    <link href="~/Content/css/supersized.css" rel="stylesheet">
-    <link href="~/Content/css/supersized.shutter.css" rel="stylesheet">
-
-    <!-- FancyBox -->
-    <link href="~/Content/css/fancybox/jquery.fancybox.css" rel="stylesheet">
-
-    <!-- Font Icons -->
-    <link href="~/Content/css/fonts.css" rel="stylesheet">
-
-    <!-- Shortcodes -->
-    <link href="~/Content/css/shortcodes.css" rel="stylesheet">
-
-    <!-- Responsive -->
-    <link href="~/Content/css/bootstrap-responsive.min.css" rel="stylesheet">
-    <link href="~/Content/css/responsive.css" rel="stylesheet">
-
-    <!-- Supersized -->
-    <link href="~/Content/css/supersized.css" rel="stylesheet">
-    <link href="~/Content/css/supersized.shutter.css" rel="stylesheet">
-
-    <!-- Google Font -->
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,200italic,300,300italic,400italic,600,600italic,700,700italic,900' rel='stylesheet' type='text/css'>
-
-    <!-- Modernizr -->
-    <script src="~/Scripts/modernizr.js"></script>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pinturas Osel</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/css/main.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="~/Scripts/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="~/Scripts/materialize.min.js"></script>
+    <script src="~/Scripts/main.js"></script>
 </head>
-
 <body>
     <header>
-        <div class="sticky-nav">
-            <a id="mobile-nav" class="menu-nav" href="#menu-nav"></a>
-
-            <div id="logo">
-                <a id="goUp" href="#home-slider" title=""></a>
-            </div>
-
-            <nav id="menu">
-                <ul id="menu-nav">
-                    <li class="current"><a href="#home-slider"></a></li>
-                    <li><a href="@Url.Action("Index", "Home")">Inicio</a></li>                    
-                    <li><a href="@Url.Action("Index", "Pintura")" class="external">Creación de pinturas</a></li>
-                    <li><a href="@Url.Action("Index", "Usuario")" class="external">Registro</a></li>
-                    <li><a href="carrito.html" class="external">Ventas</a></li>
+        <nav class="NavBar full">
+            <div class="row">
+                <div class="tittles NavBar-logo col s12 m3">Pinturas Osel</div>
+                <ul class="NavBar-links col m9">
+                    <li><a href="@Url.Action("Index", "Home")" class="waves-effect">Inicio</a></li>                    
+                    <li><a href="@Url.Action("Index", "Pintura")" class="waves-effect">Pinturas</a></li>
                 </ul>
-            </nav>
-
-        </div>
-    </header>
-    <!-- End Header -->
-    <!-- Our Work Section -->
-    <div id="work" class="page">
+                <i class="zmdi zmdi-more-vert full btn-menu hide-on-med-and-up waves-effect"></i>
+            </div>
+        </nav>
+        <h4 class="center-align tittles">Bienvenido!</h4>
+    </header>    
+    <section>
         <div class="container">
-            <!-- Title Page -->
             <div class="row">
-                <div class="span12">
-                    <div class="title-page">
-                        <h2 class="title">Pinturas</h2>
-                    </div>
-                </div>
-            </div>
-            <!-- End Title Page -->
-            <!-- Portfolio Projects -->
-            <div class="row">
-                <div class="span3">
-                    <!-- Filter -->
-                    <nav id="options" class="work-nav">
-                        <ul id="filters" class="option-set" data-option-key="filter">
-                            <li class="type-work">Catalago</li>
-                            <li><a href="#filter" data-option-value="*" class="selected">Todas las pinturas</a></li>
-                            <li><a href="#filter" data-option-value=".design">Colores claros</a></li>
-                            <li><a href="#filter" data-option-value=".photography">Colores fuertes</a></li>
+                @foreach (var pintura in ViewBag.listaPinturas)
+                {
+                    string color = pintura.Color.ToString();
+                    int numero = int.Parse(color);
 
-                        </ul>
-                    </nav>
-                    <!-- End Filter -->
-                </div>
-
-                <div class="span9">
-                    <div class="row">
-                        <section id="projects">
-                            <ul id="thumbs">
-
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 design">
-                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Azul" href="Content/img/work/full/image-01-full.jpg">
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="~/Content/img/work/thumbs/image-01.jpg" alt="Codigo Del Color: #80e5ff">
-                                    <button type="submit" class="btn btn-primary">Agregar a la Orden de Compra</button>
-                                </li>
-                                <!-- End Item Project -->
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 design">
-                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Verde" href="Content/img/work/full/image-02-full.jpg">
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="~/Content/img/work/thumbs/image-02.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                                    <button type="submit" class="btn btn-primary">Agregar a la Orden de Compra</button>
-
-                                </li>
-
-                                <!-- End Item Project -->
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 photography">
-                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="Content/img/work/full/image-03-full.jpg">
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="~/Content/img/work/thumbs/image-03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                                    <button type="submit" class="btn btn-primary">Agregar a la Orden de Compra</button>
-                                </li>
-                                <!-- End Item Project -->
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 video">
-                                    <!-- Fancybox Media - Gallery Enabled - Title - Link to Video -->
-                                    <a class="hover-wrap fancybox" data-fancybox-group="video" title="gallery" href="">
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="~/Content/img/work/thumbs/image-08.jpg" alt="Video">
-                                    <button type="submit" class="btn btn-primary">Agregar a la Orden de Compra</button>
-                                </li>
-                                <!-- End Item Project -->
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 photography">
-                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="Content/img/work/full/image-04-full.jpg">
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="~/Content/img/work/thumbs/image-04.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                                    <button type="submit" class="btn btn-primary">Agregar a la Orden de Compra</button>
-                                </li>
-                                <!-- End Item Project -->
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 photography">
-                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Clouds" href="Content/img/work/full/image-05-full.jpg">
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="~/Content/img/work/thumbs/image-05.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                                    <button type="submit" class="btn btn-primary">Agregar a la Orden de Compra</button>
-                                </li>
-                                <!-- End Item Project -->
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 video">
-                                    <!-- Fancybox Media - Gallery Enabled - Title - Link to Video -->
-                                    <a class="hover-wrap fancybox-media" data-fancybox-group="video" title="Video Content From Vimeo" href="http://vimeo.com/50834315">
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="~/Content/img/work/thumbs/image-09.jpg" alt="Video">
-                                    <button type="submit" class="btn btn-primary">Agregar a la Orden de Compra</button>
-                                </li>
-                                <!-- End Item Project -->
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 design">
-                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Dark" href="Content/img/work/full/image-06-full.jpg">
-
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="~/Content/img/work/thumbs/image-06.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                                    <button type="submit" class="btn btn-primary">Agregar a la Orden de Compra</button>
-                                </li>
-                                <!-- End Item Project -->
-                                <!-- Item Project and Filter Name -->
-                                <li class="item-thumbs span3 design">
-                                    <!-- Fancybox - Gallery Enabled - Title - Full Image -->
-                                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Beach" href="Content/img/work/full/image-07-full.jpg">
-                                        <span class="overlay-img"></span>
-                                        <span class="overlay-img-thumb font-icon-plus"></span>
-                                    </a>
-                                    <!-- Thumb Image and Description -->
-                                    <img src="~/Content/img/work/thumbs/image-07.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
-                                    <button type="submit" class="btn btn-primary">Agregar a la Orden de Compra</button>
-                                </li>
-                                <!-- End Item Project -->
-                            </ul>
-                        </section>
-
-                    </div>
-                </div>
-            </div>
-            <!-- End Portfolio Projects -->
-        </div>
-    </div>
-    <!-- End Our Work Section -->
-    <!-- About Section -->
-    <div id="about" class="page-alternate">
-        <div class="container">
-            <!-- Title Page -->
-            <div class="row">
-                <div class="span12">
-                    <div class="title-page">
-                        <h2 class="title">Acerca de nosotros</h2>
-                    </div>
-                </div>
-            </div>
-            <!-- End Title Page -->
-
-
-            <div class="row">
-
-                <!-- Start Profile -->
-                <div class="span4 profile">
-                    <div class="image-wrap">
-                        <div class="hover-wrap">
-                            <span class="overlay-img"></span>
-                            <span class="overlay-text-thumb">Misión</span>
-                        </div>                        
-                    </div>
-                    <h3 class="profile-name">Misión</h3>
-                    <p class="profile-description">
-                        Somos una empresa dedicada a fabricar y comercializar pinturas y recubrimientos de la más alta calidad para usuarios profesionales, siendo nuestra misión:
-                        Satisfacer a nuestros clientes ofreciéndoles calidad en los productos y servicios, y seriedad en el trato, así como
-                        Generar riqueza para garantizar el crecimiento de la empresa y el desarrollo del personal.                        
-                    </p>
-
-                </div>
-                <!-- End Profile -->
-                <!-- Start Profile -->
-                <div class="span4 profile">
-                    <div class="image-wrap">
-                        <div class="hover-wrap">
-                            <span class="overlay-img"></span>
-                            <span class="overlay-text-thumb">Visón</span>
+                    if (numero != null)
+                    {
+                        color = "#" + numero.ToString("X");
+                    }
+                    else
+                    {
+                        color = "white";
+                    }
+                    <div class="col s12 m6 l4">
+                        <div class="card">
+                            <div class="card-image waves-effect waves-block waves-light space activator" style="background-color:@color">
+                                &nbsp;
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title activator grey-text text-darken-4">@pintura.Nombre<i class="zmdi zmdi-more-vert right"></i></span>                                
+                            </div>
+                            <div class="card-reveal">
+                                <span class="card-title grey-text text-darken-4">@pintura.Nombre<i class="zmdi zmdi-close right"></i></span>
+                                <span class="grey-text text-darken-4">@pintura.Codigo</span>                                
+                            </div>
                         </div>
-                        
                     </div>
-                    <h3 class="profile-name">Visión</h3>
-                    <p class="profile-description">
-                        Ser la compañía fabricante de pinturas decorativas en el país que ofrece el mayor valor para las necesidades de recubrimientos de los usuarios profesionales.
-                    </p>
-
-
-                </div>
-                <!-- End Profile -->
-                <!-- Start Profile -->
-                <div class="span4 profile">
-                    <div class="image-wrap">
-                        <div class="hover-wrap">
-                            <span class="overlay-img"></span>
-                            <span class="overlay-text-thumb">Valores</span>
-                        </div>
-                        
-                    </div>
-                    <h3 class="profile-name">Valores</h3>
-                    <p class="profile-description">
-                        SIEMPRE MEJORES                        
-
-                        EFICIENCIA<hb>
-                        
-                        RESPONSABILIDAD<hb>                        
-
-                        PARTICIPACIÓN INTELIGENTE
-                        
-                    </p>
-
-                </div>
-                <!-- End Profile -->
-
+                }                               
             </div>
-            <!-- End People -->
         </div>
-    </div>
-    <!-- End About Section -->
-    <!-- Footer -->
-    <footer>
-        <p class="credits">&copy;2017 Pinturas Osel</p>
+    </section>
+    <footer class="footer">
+        <div class="col s12 tittles footer-copyright">Pinturas Osel &copy; 2017</div>        
     </footer>
-    <!-- End Footer -->
-    <!-- Back To Top -->
-    <a id="back-to-top" href="#">
-        <i class="font-icon-arrow-simple-up"></i>
-    </a>
-    <!-- End Back to Top -->
-    <!-- Js -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> <!-- jQuery Core -->
-    <script src="~/Scripts/bootstrap.min.js"></script> <!-- Bootstrap -->
-    <script src="~/Scripts/supersized.3.2.7.min.js"></script> <!-- Slider -->
-    <script src="~/Scripts/waypoints.js"></script> <!-- WayPoints -->
-    <script src="~/Scripts/waypoints-sticky.js"></script> <!-- Waypoints for Header -->
-    <script src="~/Scripts/jquery.isotope.js"></script> <!-- Isotope Filter -->
-    <script src="~/Scripts/jquery.fancybox.pack.js"></script> <!-- Fancybox -->    
-    <script src="~/Scripts/plugins.js"></script> <!-- Contains: jPreloader, jQuery Easing, jQuery ScrollTo, jQuery One Page Navi -->
-    <script src="~/Scripts/main.js"></script> <!-- Default JS -->
-    <!-- End Js -->
 </body>
 </html>
